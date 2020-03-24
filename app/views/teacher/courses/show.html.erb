@@ -1,0 +1,5 @@
+<%= render "shared/course", course: @course %>
+<% if can? :delete, @course %>
+  <%= button_to "Delete Course", { action: "destroy", id: @course.id },
+                method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
